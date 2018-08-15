@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="css/main_page.css">
 <meta charset="utf-8">
 <meta http-equiv="x-UA-compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="css/main_page.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
 <style>
-  <style>
+  
 body {font-family: Arial, Helvetica, sans-serif;}
 
 /* Full-width input fields */
@@ -62,7 +62,17 @@ span.psw {
     float: right;
     padding-top: 16px;
 }
-.logbox{
+.logbox1{
+box-shadow:-3px 8px 8px -3px green;
+border-radius: 15px;
+display:inline-block;
+border: 2px solid #73AD21;
+padding: 20px;
+width: 300px;
+height: 300px;
+}
+.logbox2{
+margin-left:5%;
 box-shadow:-3px 8px 8px -3px green;
 border-radius: 15px;
 display:inline-block;
@@ -77,8 +87,8 @@ height: 300px;
 .main-container {
   
   margin-top:25%;
-  margin-left:10%;
-  padding-bottom:100px;
+  margin-left:20%;
+  padding-bottom:70px;
   padding-top:30px;
   }
 
@@ -149,22 +159,49 @@ height: 300px;
     }
 }
 
-</style>
+
+  .header{
+      background-color:#4CAF50;
+      height: 40%;
+      width: 100%;
+    }
+  .logo{
+    margin-left: 5%;
+  }
+     #address {
+      left: 0;
+      margin-top: 5%;
+      margin-left:0%;
+    }
+   
+
+
 
 </style>
-</head>
+
+
 <title>FCRIT</title>
 <body>
-<header class="top">
-<div id="logo"><img  src="img/fcritlogo.png" alt="fcrit"></div>
-          
-         
-     
-  </div>
-</header>
+  <!--header-->
+  <header class="header">
+    <div class="logo">
+    <img src="img/fcritlogo.png" style="float: left; padding-top: 5px;padding: 20px;"> </div>
+    
+    <!--p style="display: float;">hello</p-->
+    <div id="address">
+    <p><h1> AGNEL CHARITIES'</h1> </p>
+    <p>  FR. C. RODRIGUES INSTITUTE OF TECHNOLOGY</p>
+    <p style="word-spacing: 2px;"> Agnel Technical Education Complex 
+                        Sector 9-A, Vashi, Navi Mumbai,
+                        Maharashtra, India 
+                        PIN - 400703 </p>
+    </div>
+  </header>
 
+
+<!--BOXCODE-->
 <div class="main-container">
-  <div class="logbox"  style="margin-left:5%;">
+  <div class="logbox1">
   <h2><center>Student Login</center></h2><br><br>
   <center><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;font-size:20px;">Login</button></center>
   </div>
@@ -173,12 +210,13 @@ height: 300px;
 <div id="id01" class="modal">
   
   <form class="modal-content animate" action="">
-    <div class="imgcontainer">
+
+      <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="img\student.png" alt="Studemt" class="avatar">
-    </div>
+      </div>
 
-    <div class="container">
+      <div class="container">
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
 
@@ -189,21 +227,21 @@ height: 300px;
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
-    </div>
+      </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
+        <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
   </form>
 </div>
 
 <!--ADMIN-->
 
-  <div class="logbox" style="margin-left:20%;">
+  <div class="logbox2">
   <h2><center>Admin Login</center></h2><br><br>
   <center><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;font-size:20px;">Login</button></center>
-  </div>
+  
 
 
 <div id="id02" class="modal">
@@ -214,7 +252,7 @@ height: 300px;
       <img src="img\admin.png" alt="admin" class="avatar">
     </div>
 
-    <div class="container">
+      <div class="container">
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
 
@@ -225,10 +263,10 @@ height: 300px;
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
-    </div>
+      </div>
   </form>
 </div>
-
+</div>
 </div>
        
 </body>
