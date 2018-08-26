@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/main_page.css">
 <meta charset="utf-8">
-<meta http-equiv="x-UA-compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css" href="css/main_page.css">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-</head>
+
+<!--link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script-->
 <style>
-  
 body {font-family: Arial, Helvetica, sans-serif;}
 
 /* Full-width input fields */
@@ -70,26 +70,28 @@ border: 2px solid #73AD21;
 padding: 20px;
 width: 300px;
 height: 300px;
+position: relative;
 }
 .logbox2{
-margin-left:5%;
 box-shadow:-3px 8px 8px -3px green;
 border-radius: 15px;
 display:inline-block;
 border: 2px solid #73AD21;
-padding: 20px;
+/*padding: 20px;*/
 width: 300px;
 height: 300px;
+/*margin-right:20%;*/ 
 }
 #login{
   top:50%;
 }
+
 .main-container {
-  
-  margin-top:25%;
-  margin-left:20%;
+   margin-top:15%;
+  display: inline-block;
   padding-bottom:70px;
-  padding-top:30px;
+ /* padding-top:30px
+*/  
   }
 
 
@@ -158,45 +160,33 @@ height: 300px;
        width: 100%;
     }
 }
-
-
-  .header{
-      background-color:#4CAF50;
-      height: 40%;
-      width: 100%;
-    }
-  .logo{
-    margin-left: 5%;
-  }
-     #address {
-      left: 0;
-      margin-top: 5%;
-      margin-left:0%;
-    }
-   
-
-
-
+ 
+  
 </style>
 
+</head>
 
 <title>FCRIT</title>
+
 <body>
   <!--header-->
-  <header class="header">
-    <div class="logo">
-    <img src="img/fcritlogo.png" style="float: left; padding-top: 5px;padding: 20px;"> </div>
-    
-    <!--p style="display: float;">hello</p-->
-    <div id="address">
-    <p><h1> AGNEL CHARITIES'</h1> </p>
-    <p>  FR. C. RODRIGUES INSTITUTE OF TECHNOLOGY</p>
-    <p style="word-spacing: 2px;"> Agnel Technical Education Complex 
+
+  <div header class="header">
+        
+        <img src="img/fcritlogo.png" alt="FCRIT"> 
+        
+        
+        <p><h1> AGNEL CHARITIES'</h1> </p>
+        <p>  FR. C. RODRIGUES INSTITUTE OF TECHNOLOGY</p>
+        <p style="word-spacing: 2px;"> Agnel Technical Education Complex 
                         Sector 9-A, Vashi, Navi Mumbai,
                         Maharashtra, India 
                         PIN - 400703 </p>
+       
+      
     </div>
   </header>
+
 
 
 <!--BOXCODE-->
@@ -232,7 +222,9 @@ height: 300px;
         <div class="container" style="background-color:#f1f1f1">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
         <span class="psw">Forgot <a href="#">password?</a></span>
+        <center><a href="Register.php" >Register</a></center>
         </div>
+
   </form>
 </div>
 
@@ -264,6 +256,7 @@ height: 300px;
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
       </div>
+
   </form>
 </div>
 </div>
