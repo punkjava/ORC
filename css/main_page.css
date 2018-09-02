@@ -174,7 +174,7 @@ img{
 /***NAVIGATION BAR CSS**/
 
 body{
-  margin:0;
+  margin:0%;
 }
 
 ul {
@@ -204,4 +204,15 @@ li a.active {
 li a:hover:not(.active) {
     background-color: #555;
     color: white;
+}
+.nav_bar{
+  margin-top: 25%;
+}
+.area{
+  margin-left:25%;
+  padding:1px 16px;
+  height:1000px;
+  margin-top: 15%;
+  width: 100%;
+  position: fixed;
 }

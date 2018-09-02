@@ -2,16 +2,15 @@
 <html>
 <head>
 <meta charset="utf-8">
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/main_page.css">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <!--link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script-->
+ 
 
-<style>
-
-</style>
 </head>
-<body>
+
 
 
   <header class="header">
@@ -32,17 +31,25 @@
 
 
 
-
+<body>
+<div class="na_bar">
 <ul>
   <li><a class="active" href="home.php">Form</a></li>
-  <li><a href="history.php">Hisotry</a></li>
+  <li><a href="history.php">History</a></li>
   <li><a href="status.php">Status</a></li>
   <li><a href="logout.php">Logout</a></li>
 </ul>
+</div>
+<div  class="area">
 
-<div style="margin-left:25%;padding:1px 16px;height:1000px;">
-  <h2>FORM HERE</h2>
 </div>
 
 </body>
 </html>
+<script type="text/javascript">
+   $(function(){
+    $(".area").load("appl_form.html");
+
+   });
+
+ </script>

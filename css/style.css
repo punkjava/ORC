@@ -1,0 +1,42 @@
+
+
+
+
+
+
+header h1 hr {
+    background: #ef0c72 none repeat scroll 0 0;
+    border: medium none;
+    color: #ef0c72;
+    height: 4px;
+    margin: 0 auto;
+    width: 38px;
+}
+header span {
+	text-transform:capitalize;
+	display: block;
+	font-size: 60%;
+	color: #000;
+	padding: 0 0 0.3em 0.1em;
+}
+
+
+
+small {
+    bottom: 25px;
+    color: #EF0C72;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+}
+
+
+
+section {
+    margin:0 auto;
+    height: 442px;
+    margin:0 auto;
+    width: 470px;
+	margin-bottom:40px;
+}
+

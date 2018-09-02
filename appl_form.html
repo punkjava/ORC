@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>RAILWAY CONCESSION APPLICATION FORM</title>
+    <meta name="author" content="Reverie Tech" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="style1.css" />
+</head>
+
+<body>
+
+<header>
+	<h1><b>RAILWAY CONCESSION APPLICATION FORM</b></h1>
+</header>
+    <section class="tabblue">
+		<ul class="tabs blue">
+          <li>
+            <input type="radio" name="tabs blue" id="tab1" checked />
+     
+            <div id="tab-content1" class="tab-content">
+              <p text align="justify">To,<br>
+The Principal,<br>
+Fr.CRIT, Vashi,<br>
+Navi Mumbai,<br>
+Respected sir,<br>
+<br>
+I desire to travel by train from my residence to the institute. A railway concession form may be kindly issued to me. The required details for the same are furnished as here under.</p>
+
+
+              <form method="post" name="register" action="#">
+                <input class="field" name="usernamesignup" required type="text" placeholder="Enter Full Name" />
+                <input class="field" name="usernamesignup" required type="text" placeholder="Enter Source" />
+                <input class="field" name="usernamesignup" required type="text" placeholder="Enter Destination" />
+                
+                
+                <select>
+                  <option disabled="" selected="" value="0">Choose Gender</option>
+                  <option value="1">Male</option>
+                  <option value="2">Female</option>
+                </select>
+                <select class="last">
+                  <option disabled="" selected="" value="0">Choose Route</option>
+                  <option value="1">Central</option>
+                  <option value="2">Western</option>
+                </select>
+                 <select>
+                  <option disabled="" selected="" value="0">Choose Duration</option>
+                  <option value="1">Monthly</option>
+                  <option value="2">Quaterly</option>
+                </select>
+                <select class="last">
+                  <option disabled="" selected="" value="0">Choose Class</option>
+                  <option value="1">First</option>
+                  <option value="2">Second</option>
+                </select>
+                <textarea class="field" name="usernamesignup" rows="10" cols="52" placeholder="Enter Address"></textarea>
+                 Date of Birth <input type="date" data-date-inline-picker="true" onfocusout="_calcAge();" id="mydate" /><br>
+                 Enter Age:
+                 <input type="text" name="age" placeholder="Enter years" id="year" disabled ><input type="text" name="age" placeholder="Enter months" id="month" disabled ><br>
+
+
+<br>
+<h1><b>Previous Pass Details</b></h1>
+         <select class="last">
+                  <option disabled="" selected="" value="0">Present Pass Class</option>
+                  <option value="1">First</option>
+                  <option value="2">Second</option>
+                </select>
+<input type="text" name="Ticket" placeholder="Enter Ticket no" required>
+<input type="text" name="f" placeholder="Enter source" required>
+<input type="text" name="d" default="vashi" placeholder="Enter Destination" required>
+<input type="text" name="d" default="vashi" placeholder="Previous Certificate No" required><br>
+<input class="field" name="usernamesignup" required type="text" placeholder="Enter Roll no" />
+<input class="field" name="usernamesignup" required type="text" placeholder="Enter Course" />
+<input class="field" name="usernamesignup" required type="text" placeholder="Enter Semester" /><br>
+<br>
+Date of Expiry <input type="date" data-date-inline-picker="true" /><br>
+<br>
+Issued on <input type="date" data-date-inline-picker="true" /><br>
+<div id="button">
+                <input type="submit" value="Submit">
+              </div>
+              </form>
+            </div>
+          </li>
+      	  <li>
+            
+          
+        
+	</ul>
+	</section>
+    
+    
+    
+    
+</div>
+    <script>
+           
+        function _calcAge() {
+            var date = new Date(document.getElementById("mydate").value);
+            
+            var month=document.getElementById("month");
+            var today = new Date();
+
+            var timeDiff = Math.abs(today.getTime() - date.getTime());
+            var a = Math.ceil(timeDiff / (1000 * 3600 * 24)) / 365;
+            
+            var age = new Date(a);
+            var year=age.getYear();
+            var month=age.getMonth();
+            
+            a=a.toFixed(2);
+            var y=Math.floor(a);
+            document.getElementById("year").value = y.toString();
+
+            m=(a-y)*10;
+            m=m.toFixed(2);
+            m=Math.ceil(m);
+            document.getElementById("month").value = m.toString();
+
+            
+        }
+
+    </script>
+
+
+</body>
+
+</html>

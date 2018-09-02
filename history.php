@@ -32,12 +32,12 @@
 
 <ul>
   <li><a  href="home.php">Form</a></li>
-  <li><a class="active" href="history.php">Hisotry</a></li>
+  <li><a class="active" href="history.php">History</a></li>
   <li><a href="status.php">Status</a></li>
   <li><a href="logout.php">Logout</a></li>
 </ul>
 
-<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+<div class="area">
   <h2>HISTORY HERE</h2>
 </div>
 
