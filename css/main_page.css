@@ -209,10 +209,9 @@ li a:hover:not(.active) {
   margin-top: 25%;
 }
 .area{
-  margin-left:25%;
+  
   padding:1px 16px;
   height:1000px;
-  margin-top: 15%;
-  width: 100%;
-  position: fixed;
+
 }
+

@@ -15,7 +15,7 @@
 
   <header class="header">
     <div class="logo">
-    <img src="img/fcritlogo.png" style=""> 
+    <img src="img/fcritlogo.png" > 
     
 
         <div id="address">
@@ -37,12 +37,16 @@
   <li><a class="active" href="home.php">Form</a></li>
   <li><a href="history.php">History</a></li>
   <li><a href="status.php">Status</a></li>
-  <li><a href="logout.php">Logout</a></li>
+  <li><a href="server/logout.php">Logout</a></li>
 </ul>
 </div>
-<div  class="area">
 
+  <div  class="area">
+    <iframe scrolling="yes">
+    </iframe>
 </div>
+
+
 
 </body>
 </html>

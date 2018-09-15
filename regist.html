@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8" />
@@ -13,7 +13,7 @@
 <body>
 
 <header>
-	<h1><b>REGISTERATION</b></h1>
+	<center><h1><b>REGISTERATION</b></h1></center>
 </header>
     <section class="tabblue">
 		<ul class="tabs blue">
@@ -22,13 +22,14 @@
      
             <div id="tab-content1" class="tab-content">
              
-                <form method="post" name="register" action="#">
-                USER NAME:<br><input class="field" maxlength="6" minlength="6" id="user" name="usernamesignup" required type="text" placeholder="Enter roll no" onfocusout="abc();"  /><br>
+                <form method="post" action="server/email_verify.php">
+                USERNAME:<br><input class="field" maxlength="6" minlength="6" id="user" name="username" required type="text" placeholder="Enter roll no" onfocusout="abc();"  /><br>
 
 
 
-	 PASSWORD: <input type="password" id="myInput" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+	 PASSWORD: <input type="password" name="password" id="myInput" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br>
+
 <input type="checkbox" onclick="myFunction();">Show Password
 <script>
 function myFunction() {
@@ -71,10 +72,10 @@ password.onchange = validatePassword;
 confirm_password.onkeyup = validatePassword;
 </script>
 
-                EMAIL-ID:<input type="email" name="usernamesignup" required placeholder="Enter E-Mail Id"/>
+                EMAIL-ID:<input type="email" name="email" required placeholder="Enter E-Mail Id"/>
 <div id="button">
 
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" name="submit" style="width:100px; height:50px;font-size: 20px;">
               </div>
 
 </form>
