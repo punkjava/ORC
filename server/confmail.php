@@ -12,7 +12,9 @@ if (!isset($_GET['email']) || !isset($_GET['token'])) {
 	$email = $con->real_escape_string($_GET['email']);
 	$token = $con->real_escape_string($_GET['token']);
 
-	$sql = $con->query()
+	$sql = $con->query("update student_login set status=1,token='' 
+			where email='$email'");
+	echo "email verified successfully";
 }
 
 ?>

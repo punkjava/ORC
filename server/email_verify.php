@@ -8,10 +8,24 @@ if (isset($_POST['submit'])) {
 	$password = $con->real_escape_string($_POST['password']);
 	$mail_id = $con->real_escape_string($_POST['email']);
 
-	$sql = $con->query("select email from student_login where email='$mail_id'");
+	$sql2 = $con->query("select roll_no from student_login where roll_no='$username'");
+	$sql1 = $con->query("select email from student_login where email='$mail_id'");
+	if ($sql2->num_rows==0) 
+	{  echo "<script>
+			window.location.href='../regist.html';
+			alert('roll_no dosent exists');
+		</script>"; 
+	
+	}
 
-	if ($sql->num_rows>0) {
-			echo "Email already exists"; 
+		
+
+
+	elseif($sql1->num_rows>0) {
+		echo "<script>
+			window.location.href='../regist.html';
+			alert('Email already exists');
+		</script>";
 	}
 	else
 	{
@@ -19,9 +33,10 @@ if (isset($_POST['submit'])) {
 		$token = str_shuffle($token);
 		$token = substr($token,0,10);	
 
+		
 		$con->query("update student_login set password='$password',email='$mail_id',
 					token='$token' where roll_no=$username");
-
+			
 
 		require '../vendor/autoload.php';
 		require '../vendor/phpmailer/phpmailer/src/SMTP.php';
@@ -50,10 +65,11 @@ if (isset($_POST['submit'])) {
 		
 	$mail->Subject="verify email";
 	
-		$mail->Body ="click here <br>
+		$mail->Body ="click on this link below <br>
 
-			<a href= 'http://localhost/ORC/server/confmail.php?email=$mail_id&token=$token> 
-			</a>
+	<a href= 'http://localhost:8800/ORC/server/confmail.php?email=$mail_id&token=$token'>
+			click here :-)
+	</a>
 		";
 	
 	
@@ -61,7 +77,10 @@ if (isset($_POST['submit'])) {
     echo 'Message could not be sent.<br>';
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
-    echo '<br>verify your email';
+	echo "<script>
+			window.location.href='../index.html';
+			alert('verify your email');
+		</script>";
 }
 
 	}
