@@ -1,4 +1,11 @@
+<?php 
+session_start();
+if(!isset($_SESSION['username'])){
+  header("Location:index.html");
+}
+?>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -36,7 +43,7 @@
   <li><a  href="history.php">History</a></li>
   <li><a class="active" href="status.php">Status</a></li>
  
-  <li><a href="#about">Logout</a></li>
+  <li><a href="server/logout.php">Logout</a></li>
 </ul>
 
 <div class ="area">
@@ -52,3 +59,5 @@
    });
 
  </script>
+
+ 

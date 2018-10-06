@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 $query = "SELECT * FROM student_login WHERE roll_no='$username'
 and password='$password' and status=1";
 
-	$result = mysqli_query($con,$query) or die(mysql_error());
+	$result = mysqli_query($con,$query) or die(mysqli_error());
 	$rows = mysqli_num_rows($result);
 
         if($rows==1){
