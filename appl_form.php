@@ -63,7 +63,7 @@ input[type=password]{
     border-radius: 4px;}
 
 input[type=text]{
-  width:80%;
+  width:50%;
   padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -141,11 +141,11 @@ I desire to travel by train from my residence to the institute. A railway conces
                 <input class="field" name="FirstName" required type="text" value=<?php echo $name;?> disabled/>
 	               <input class="field" name="LastName" required type="text" value=<?php echo $last_name;?> disabled />
 	               <input class="field" name="MiddleName" required type="text" value=<?php echo $middle_name;?> disabled/><br><br>
-                <input class="field" name="source" required type="text" value="Vashi" disabled/>
+                Destination:<input class="field" name="source" required type="text" value="Vashi" disabled/>
                <br><br>
 
                 <div class="select">
-                 <select name="Destination" style="font-size:Medium;width:244px;">
+                 Source:<select name="Destination" style="font-size:Medium;width:244px;">
 
   <option value="Airoli">Airoli</option>
   <option value="Ambarnath">Ambarnath</option>
@@ -278,11 +278,11 @@ I desire to travel by train from my residence to the institute. A railway conces
   <option value="Virar">Virar</option>
   <option value="Vithalwadi">Vithalwadi</option>
 
-</select>
+</select><br>
                 
              
                 
-              <input class="field" name="gender" value= <?php echo $g;?> disabled/>
+              Gender:<input class="field" type="text" name="gender" value= <?php echo $g;?> disabled/>
              
                  <!--
                 <select name="Gender" style="font-size:Medium;width:244px;">
@@ -330,12 +330,20 @@ I desire to travel by train from my residence to the institute. A railway conces
                   <option value="2">Second</option>
                 </select>
       <input type="text" name="Ticket" placeholder="Enter Ticket no" required><br><br>
-      <input type="text" name="f" placeholder="Enter source" required>
-        <input type="text" name="d" default="vashi" placeholder="Enter Destination" required><br><br>
-<input type="text" name="d" default="vashi" placeholder="Previous Certificate No" required><br><br>
-<input class="field" name="usernamesignup" required type="text" placeholder="Enter Roll no" />
-<input class="field" name="usernamesignup" required type="text" placeholder="Enter Course" />
-<input class="field" name="usernamesignup" required type="text" placeholder="Enter Semester" /><br>
+     Source: <input type="text" name="psource" placeholder="Enter source" required>
+        Destination:<input type="text" name="pdestin" value="Vashi" required disabled><br><br>
+<input type="text" name="certiNo"  placeholder="Previous Certificate No" required><br><br>
+<input class="field" name="rollno" required type="text" value=<?php echo $roll_no;?> disabled />
+<input class="field" name="usernamesignup" required type="text" value=<?php echo $cour;?> disabled/>
+<select class="last" style="height:40px; width:180px ";>
+                  <option disabled="" selected="" value="0">Present Pass Class</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
 <br>
 Date of Expiry: <br>	<input type="date" data-date-inline-picker="true" /><br>
 <br>
@@ -344,7 +352,7 @@ Issued on: 	<br>	<input type="date" data-date-inline-picker="true" />
 <br>
 <br>
      
-        <center><input type="Submit" value="Submit" style="vertical-align:middle"></center>
+      <center><input type="Submit" value="Submit" style="vertical-align:middle"></center>
     
 <br>
 <br>
