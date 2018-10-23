@@ -16,7 +16,7 @@ while ($rows = mysqli_fetch_array($result)){
        $last_name = $rows['last_name'];
        $g=$rows['gender'];
        $dob=$rows['DOB'];
-        $cour=$rows['course'];
+      $cour=$rows['course'];
        $flat=$rows['flat_no'];
        $area=$rows['area'];
        $soc=$rows['society'];
@@ -468,18 +468,12 @@ I desire to travel by train from my residence to the institute. A railway conces
 
         Destination:<input type="text" name="desti" value="Vashi" required disabled><br><br>-->
 
-<input type="text" name="prv_certi"  placeholder="Previous Certificate No" required><br><br>
+<input type="text" name="prv_certi"  placeholder="Previous Certificate No" required/><br><br>
 
 
-Roll_no:<input type="text" name="rono"  required  disabled 
-value=<?php echo $roll_nos;?>  />
-Course:<input type="text" name="crs" disabled required value="<?php echo $cour;?>" />
-<select name="present_class" style="height:40px; width:180px;">
-                  
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                </select>
-<br>
+Roll_no:<input type="text" name="rono" value="<?php echo $roll_no;?>" required  disabled /><br>
+Course:<input type="text" name="crs" disabled required value="<?php echo $cour;?>" /><br><br>
+
 Date of Expiry: <br>	<input type="date" data-date-inline-picker="true" name="expiry_date" /><br>
 <br>
 Issued on: 	<br>	<input type="date" data-date-inline-picker="true" name="issue" />

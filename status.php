@@ -9,8 +9,10 @@ if(!isset($_SESSION['username'])){
 <html>
 <head>
 <meta charset="utf-8">
+<title>status</title>
 <link rel="stylesheet" type="text/css" href="css/main_page.css">
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <!--meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"-->
 <!--link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script-->
@@ -40,7 +42,7 @@ if(!isset($_SESSION['username'])){
 
 <ul>
   <li><a  href="home.php">Form</a></li>
-  <li><a  href="history.php">History</a></li>
+  <li><a  href="student_history.php">History</a></li>
   <li><a class="active" href="status.php">Status</a></li>
  
   <li><a href="server/logout.php">Logout</a></li>

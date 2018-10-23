@@ -47,6 +47,7 @@ session_start();
 include("server/db.php");
 if(isset($_GET["rol"])){
 $rol = $_GET["rol"];
+
 $sql = "SELECT * FROM student_details  inner join ticket_details on student_details.rollno=ticket_details.Roll_no where student_details.rollno=$rol" ;
 $result = $con->query($sql);
 echo"<div class=\"mar\">";
