@@ -12,7 +12,9 @@ $roll_nos=$_SESSION['username'];
 <title>Student_history</title>
 <link rel="stylesheet" type="text/css" href="css/table.css">
 <link rel="stylesheet" type="text/css" href="css/main_page.css">
-<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<!--link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script-->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <style>
 #arr{
@@ -53,6 +55,7 @@ table{
   <li><a  href="home.php">Form</a></li>
   <li><a class="active" href="student_history.php">History</a></li>
   <li><a  href="status.php">Status</a></li>
+  <li><a href="demo.html">Notice</a></li>
  <li><a href="server/logout.php">Logout</a></li>
 </ul>
 <div id="arr" >
@@ -70,8 +73,8 @@ if ($result->num_rows > 0)
     echo "<table>
     <tr>
     <th>APPLICATION ID</th>
-    <th>D.O.APP</th>
     <th>SOURCE</th>
+    <th>APPLICATION DATE</th>
     <th>ROUTE</th>
     <th>CLASS</th>
     <th>P.CERTI.NO</th>

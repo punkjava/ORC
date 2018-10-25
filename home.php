@@ -10,6 +10,7 @@ if(!isset($_SESSION['username'])){
 
 <link rel="stylesheet" type="text/css" href="css/main_page.css">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>   
 <!--link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script-->
  
@@ -42,6 +43,7 @@ if(!isset($_SESSION['username'])){
   <li><a class="active" href="home.php">Form</a></li>
   <li><a href="student_history.php">History</a></li>
   <li><a href="status.php">Status</a></li>
+  <li><a href="demo.html">Notice</a></li>
   <li><a href="server/logout.php">Logout</a></li>
 </ul>
 
@@ -55,11 +57,11 @@ if(!isset($_SESSION['username'])){
 
 </body>
 </html>
-<script
+<!--script
   src="https://code.jquery.com/jquery-1.12.4.js"
   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
-  crossorigin="anonymous"></script>
-<script type="text/javascript">
+  crossorigin="anonymous"></script-->
+<script>
  
 
    $(document).ready(function(){

@@ -35,7 +35,7 @@ td {
 <?php 
 session_start();
 include ("server/db.php");
-$sql = "SELECT App_id, Roll_no, line,expire_date_previous FROM ticket_details";
+$sql = "SELECT App_id, Roll_no, line,expire_date_previous FROM ticket_details where approved='NULL' or approved='null'";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) 
@@ -59,13 +59,14 @@ if ($result->num_rows > 0)
     echo "</table>";
 }
  else {
-    echo "0 results";
+    echo "<br><br><br><br><br><br><br><br><br><br><br><br><center>No recent applications!</center>";
 }
 
 
 ?>
 <input type='button' name='OK' class='ok' value='View'/> 
 <script src="jquery-3.3.1.min.js"></script>
+
 <script>
 $("#table tr").click(function(){
    $(this).addClass('selected').siblings().removeClass('selected');    

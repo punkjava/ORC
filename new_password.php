@@ -21,6 +21,7 @@ if(isset($_POST['submit'])){
 			$email = $con->real_escape_string($_GET['email']);
 			$newpassword = $con->real_escape_string($_POST['psw']);
 
+			
 			$sql = $con->query("update student_login set password='$newpassword' where email='$email'");
 			echo "<script>
 					window.location.href='index.html';

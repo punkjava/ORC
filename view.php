@@ -87,7 +87,7 @@ if ($result->num_rows > 0) {
 
   echo"<div class=\"but\">";
 	$_SESSION['rol']=$rol;
-   echo"<a href="server/check.php">VALIDATE</a>";
+   echo "<a href='server/check.php'>VALIDATE</a>";
    
 } 
 else {
