@@ -1,16 +1,8 @@
-<?php 
-session_start();
-if(!isset($_SESSION['username'])){
-  header("Location:index.html");
-}
-$roll_nos=$_SESSION['username'];
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="footer, address, phone, icons" />
   
@@ -97,22 +89,6 @@ body {
         opacity: 0.5;
     }
 }
-table{
-    border-collapse: collapse;
-    border-spacing:0%;
-    width: 80%;
-    border: 2px solid #ddd;
-    margin: 0 auto;
-  }
-
-th, td {
-    text-align: left;
-    padding: 16px;
-}
-
-tr:nth-child(even) {
-    background-color: #ECF7F5
-}
 
 
 @media screen and (max-width: 500px) {
@@ -126,19 +102,39 @@ tr:nth-child(even) {
     color: white
   }
 }
+.button {
+    background-color: #75E346;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
 
+.bcl
+{	
+	background-color: lightgrey;
+    	width: 50%;
+   	  padding:10%;
+  	  margin: 25px;
+	   background-color:#ECF7F5;
+	   font-family: "Times New Roman", Times, serif;
+   
+}
 </style>
 </head>
 <body>
 
 <div class="header">
-  
-  <img style="width:280px;height:190px"; src="img\fcritlogo.png" alt="Italian Trulli" class="logo">
-
+  <img style="width:220px;height:190px"; src="img\fcritlogo.png" alt="Italian Trulli" class="logo">
 
   <div class="header-right">
-      <h1><b style="color:white; font-size:60px";> AGNEL CHARITIES'</h1></b> </p>
-        <p style="color:white;font-size:30px";>  FR. C. RODRIGUES INSTITUTE OF TECHNOLOGY</p>
+      <h1><b style="color:white; font-size:45px";> AGNEL CHARITIES'</h1></b> </p>
+        <p style="color:white;font-size:20px";>  FR. C. RODRIGUES INSTITUTE OF TECHNOLOGY</p>
         <p style="word-spacing: 2px; color:white;font-size:20px";> Agnel Technical Education Complex 
                         Sector 9-A, Vashi, Navi Mumbai,
                         Maharashtra, India 
@@ -153,56 +149,37 @@ tr:nth-child(even) {
       <a class="navbar-brand" href="#"></a>
     </div>
     <ul class="nav navbar-nav">
-     <li><a href="home.php">Form </a></li>
+      <li><a href="home.php">Form </a></li>
       <li><a href="student_history.php">History</a></li>
-      <li class="active"><a href="status.php">Status</a></li>
-      <li><a href="student_notice.html">Notice</a></li>
-      <li><a href="studentnav5.php">Change Password</a></li>
+      <li><a href="status.php">Status</a></li>
+      <li  class="active"><a href="student_notice.html">Notice</a></li>
+      <li><a href="stud_chgpsw.php">Change Password</a></li>
       <li><a href="server/logout.php">Logout</a></li>
 
     </ul>
   </div>
 </nav>
-<br>
-<br>
-<br>
-<div class="a">
-<div style="overflow-x:auto;">
-   <?php 
-include("server/db.php");
+  <center><div class="bcl">
+<div id="demo">
+<h1><center><b style="color: #4A1572";>CLICK BELOW TO VIEW LATEST UPDATES<b></center></h1><br><br><br><br>
+<center><button type="button" class="button" onclick="loadDoc()">VIEW NOTICE</button></center>
+</div></center>
 
-$sql = "SELECT App_id,date_of_app,unique_no,approved FROM student_details inner join ticket_details on student_details.rollno=ticket_details.Roll_no where student_details.rollno=$roll_nos";
-$result = $con->query($sql);
-
-if ($result->num_rows > 0) 
-{
-
-    echo "<table>
-    <tr>
-    <th>APPLICATION ID</th>
-    <th>UNIQUE NO</th>
-    <th>APPLICATION DATE</th>
-    <th>APPROVED</th>
-    
-        </tr>";
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["App_id"]."</td>";
-        echo "<td>".$row["unique_no"]."</td>";
-        echo "<td>".$row["date_of_app"]."</td>";
-        echo "<td>".$row["approved"]."</td>";
-        
-   
-    }    echo "</table>";
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
 }
- else {
-    echo "0 results";
-}
-
-?>
+</script>
 </div>
 
-</div>
 <footer class="footer-distributed">
 
       <div class="footer-left">
@@ -248,7 +225,14 @@ PIN - 400703<br></p>
           Father Conceicao Rodrigues Institute of Technology' is a private engineering college affiliated to the University of Mumbai located in vashi, Navi Mumbai.
         </p>
 
-        
+        <div class="footer-icons">
+
+          <a href="https://www.facebook.com/pages/Fr-Conceicao-Rodrigues-Institute-of-Technology/109529155739829"><i class="fa fa-facebook"></i></a>
+          
+          <a href="https://in.linkedin.com/in/fyp-fcrit-87bb6016a"><i class="fa fa-linkedin"></i></a>
+          <a href="https://github.com/FCRIT"><i class="fa fa-github"></i></a>
+
+        </div>
 
       </div>
 

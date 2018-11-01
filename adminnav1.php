@@ -1,21 +1,13 @@
-<?php 
-session_start();
-if(!isset($_SESSION['username'])){
-  header("Location:index.html");
-}
-$roll_nos=$_SESSION['username'];
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="footer, address, phone, icons" />
   
 
-  <title>nav</title>
+ 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -97,9 +89,9 @@ body {
         opacity: 0.5;
     }
 }
-table{
+table {
     border-collapse: collapse;
-    border-spacing:0%;
+    border-spacing: 0;
     width: 80%;
     border: 2px solid #ddd;
     margin: 0 auto;
@@ -113,6 +105,22 @@ th, td {
 tr:nth-child(even) {
     background-color: #ECF7F5
 }
+.ok {
+    margin: 5%
+    padding:10%;
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+.ok.btn-signin:hover,
+.ok.btn-signin:active,
+.ok.btn-signin:focus {
+    background-color: rgb(12, 97, 33);
+}
+
 
 
 @media screen and (max-width: 500px) {
@@ -126,12 +134,16 @@ tr:nth-child(even) {
     color: white
   }
 }
+.selected {
+    background-color: dark blue;
+    color: #FFF;
+}
+
 
 </style>
 </head>
 <body>
-
-<div class="header">
+    <div class="header">
   
   <img style="width:280px;height:190px"; src="img\fcritlogo.png" alt="Italian Trulli" class="logo">
 
@@ -153,56 +165,65 @@ tr:nth-child(even) {
       <a class="navbar-brand" href="#"></a>
     </div>
     <ul class="nav navbar-nav">
-     <li><a href="home.php">Form </a></li>
-      <li><a href="student_history.php">History</a></li>
-      <li class="active"><a href="status.php">Status</a></li>
-      <li><a href="student_notice.html">Notice</a></li>
-      <li><a href="studentnav5.php">Change Password</a></li>
-      <li><a href="server/logout.php">Logout</a></li>
-
+        <li class="active"><a   href="adminnav1.php">View Application</a></li>
+  <li><a  href="adminnav2.php">Change Password</a></li>
+  <li><a href="adminnav3.php">History</a></li>
+  <li><a href="server/logout.php">Logout</a></li>
     </ul>
   </div>
 </nav>
-<br>
-<br>
-<br>
-<div class="a">
 <div style="overflow-x:auto;">
-   <?php 
-include("server/db.php");
+<?php 
+session_start();
+include ("server/db.php");
+$sql = "SELECT App_id, Roll_no, line,expire_date_previous FROM ticket_details where approved='NULL'or approved='null'";
 
-$sql = "SELECT App_id,date_of_app,unique_no,approved FROM student_details inner join ticket_details on student_details.rollno=ticket_details.Roll_no where student_details.rollno=$roll_nos";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) 
 {
-
-    echo "<table>
+    echo "<br><br><table id='table'>
     <tr>
-    <th>APPLICATION ID</th>
-    <th>UNIQUE NO</th>
-    <th>APPLICATION DATE</th>
-    <th>APPROVED</th>
-    
-        </tr>";
+	<th>ROLL NO</th>
+	 <th>APPLICATION ID</th>
+    <th>ROUTE</th>
+    <th>EXPIRY DATE</th>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["App_id"]."</td>";
-        echo "<td>".$row["unique_no"]."</td>";
-        echo "<td>".$row["date_of_app"]."</td>";
-        echo "<td>".$row["approved"]."</td>";
-        
-   
-    }    echo "</table>";
+		echo "<tr><td>".$row["Roll_no"]."</td>";
+        echo "<td>".$row["App_id"]."</td>";
+       
+         echo"<td> ".$row["line"]."</td>";
+        echo "<td>".$row["expire_date_previous"]."</td></tr>";
+		
+    }
+    echo "</table>";
 }
  else {
-    echo "0 results";
+    echo "<br><center>No recent applications!</center>";
 }
 
-?>
-</div>
 
+?>
+
+<center><br><br><br><h4><input type='button' name='oK'  class='ok' value='View'/></center></h4>
+<script src="jquery-3.3.1.min.js"></script>
 </div>
+<script>
+$("#table tr").click(function(){
+   $(this).addClass('selected').siblings().removeClass('selected');    
+   var value=$(this).find('td:first').html();
+   alert("Click view to approve apllication of "+value+" applicant"); 
+	
+});
+
+$('.ok').on('click', function(e){
+    var roll = $("#table tr.selected td:first").html();
+	var url = "view.php?rol="+roll;
+    $(location).attr('href',url);
+});
+
+</script>
 <footer class="footer-distributed">
 
       <div class="footer-left">
@@ -248,7 +269,6 @@ PIN - 400703<br></p>
           Father Conceicao Rodrigues Institute of Technology' is a private engineering college affiliated to the University of Mumbai located in vashi, Navi Mumbai.
         </p>
 
-        
 
       </div>
 

@@ -17,8 +17,8 @@ $expiry_date=date('Y-m-d',strtotime($_POST['expiry_date']));
 
 	
 
-	$query = "INSERT INTO ticket_details(App_id,current_Tic_no, duration,source,Roll_no,date_of_app,line,class,pre_certi_no,issued_on, unique_no, expire_date_previous) VALUES (NULL,'$Ticket_no', '$duration', '$source','$roll_nos', CURRENT_TIMESTAMP, '$route', '$class', '$prv_certi', 
-		'$issued_on','', '$expiry_date')";
+	$query = "INSERT INTO ticket_details(App_id,current_Tic_no, duration,source,Roll_no,date_of_app,line,class,pre_certi_no,issued_on, unique_no, expire_date_previous,approved) VALUES (NULL,'$Ticket_no', '$duration', '$source','$roll_nos', CURRENT_TIMESTAMP, '$route', '$class', '$prv_certi', 
+		'$issued_on','', '$expiry_date','null')";
 		
 		if ($con->query($query) === TRUE) {
 			echo "<script>

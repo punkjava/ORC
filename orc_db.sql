@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2018 at 05:56 AM
+-- Generation Time: Oct 30, 2018 at 05:13 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -36,7 +36,7 @@ CREATE TABLE `admine_details` (
 --
 
 INSERT INTO `admine_details` (`Admin_id`, `password`) VALUES
-('admin$1', 'Admin@12');
+('admin$1', 'Shreya@12');
 
 -- --------------------------------------------------------
 
@@ -63,6 +63,7 @@ CREATE TABLE `student_details` (
 --
 
 INSERT INTO `student_details` (`rollno`, `first_name`, `middle_name`, `last_name`, `gender`, `DOB`, `course`, `flat_no`, `area`, `society`, `pin_code`) VALUES
+(501652, 'sushant', 'chalak', 'Ravi', 'M', '2018-10-24', 'IT', 'B-432', 'Navi Mumbai', 'Lodha', 400038),
 (501668, 'Pankaj', 'Ramkuber', 'Gupta', 'M', '2018-10-10', 'IT', 'H/17', 'kurla', 'shri krishna chowk', 400070),
 (501669, 'Shreya', 'Shrirang', 'Joshi', 'F', '1999-02-05', 'IT', 'k/78', 'khar', 'taj hotel', 400038);
 
@@ -86,7 +87,9 @@ CREATE TABLE `student_login` (
 
 INSERT INTO `student_login` (`roll_no`, `password`, `email`, `status`, `token`) VALUES
 (501668, 'pankajg#22', 'pankajgupta.pg877@gmail.com', 1, ''),
-(501670, 'Swapnali@321', 'ip.proj.Orc@gmail.com', 1, '');
+(501670, 'Swapnali@321', 'ip.proj.Orc@gmail.com', 1, ''),
+(501667, '', '', 0, ''),
+(501652, '', '', 0, '');
 
 -- --------------------------------------------------------
 
@@ -102,14 +105,6 @@ CREATE TABLE `ticket_details` (
   `Roll_no` int(8) NOT NULL,
   `date_of_app` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ;
-
---
--- Dumping data for table `ticket_details`
---
-
-INSERT INTO `ticket_details` (`App_id`, `current_Tic_no`, `duration`, `source`, `Roll_no`, `date_of_app`, `line`, `class`, `pre_certi_no`, `issued_on`, `unique_no`, `expire_date_previous`, `approved`) VALUES
-(15, '53453534', 'Monthly', 'Kelve Road', 501668, '2018-10-25 00:12:25.608265', 'Central', 'First', 'x54df5ds', '2018-10-31', '', '2018-10-18', 'no'),
-(16, 'fd2a3s26', 'Quaterly', 'khar', 501669, '2018-10-25 00:59:18.711894', 'Western', 'Second', 'x54df5ds', '2018-10-31', '535', '2018-10-26', 'yes');
 
 --
 -- Indexes for dumped tables

@@ -22,7 +22,7 @@ and password='$password' ";
 	    $_SESSION['username'] = $username;
 	    $_SESSION['password']=$password;
            
-	    header("Location: ../adminhome.html");
+	    header("Location: ../adminnav1.php");
 	}	
 else
 {

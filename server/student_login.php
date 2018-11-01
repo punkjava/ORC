@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); ob_start();
 if (isset($_POST['submit'])) {
 	require 'db.php';
 	$username = $con->real_escape_string($_POST['uname']);
@@ -20,7 +20,7 @@ and password='$password' and status=1";
 
         if($rows==1){
 	    $_SESSION['username'] = $username;
-	    $_SESSION['password']=$password;
+	    $_SESSION['password'] = $password;
            
 	    header("Location: ../home.php");
 	}	

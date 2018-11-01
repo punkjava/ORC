@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
 	$sql1 = $con->query("select email from student_login where email='$mail_id'");
 	if ($sql2->num_rows==0) 
 	{  echo "<script>
-			window.location.href='../regist.html';
+			window.location.href='../registeration.html';
 			alert('roll_no dosent exists');
 		</script>"; 
 	
@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
 
 	elseif($sql1->num_rows>0) {
 		echo "<script>
-			window.location.href='../regist.html';
+			window.location.href='../registeration.html';
 			alert('Email already exists');
 		</script>";
 	}

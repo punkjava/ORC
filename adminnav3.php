@@ -1,21 +1,13 @@
-<?php 
-session_start();
-if(!isset($_SESSION['username'])){
-  header("Location:index.html");
-}
-$roll_nos=$_SESSION['username'];
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
+   
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="footer, address, phone, icons" />
   
 
-  <title>nav</title>
+  <title>admin history</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -97,12 +89,11 @@ body {
         opacity: 0.5;
     }
 }
-table{
+table {
     border-collapse: collapse;
-    border-spacing:0%;
+    border-spacing: 0;
     width: 80%;
     border: 2px solid #ddd;
-    margin: 0 auto;
   }
 
 th, td {
@@ -130,7 +121,6 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
-
 <div class="header">
   
   <img style="width:280px;height:190px"; src="img\fcritlogo.png" alt="Italian Trulli" class="logo">
@@ -148,60 +138,72 @@ tr:nth-child(even) {
   
 </div>
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+  <div class="container-fluid>
     <div class="navbar-header">
       <a class="navbar-brand" href="#"></a>
     </div>
     <ul class="nav navbar-nav">
-     <li><a href="home.php">Form </a></li>
-      <li><a href="student_history.php">History</a></li>
-      <li class="active"><a href="status.php">Status</a></li>
-      <li><a href="student_notice.html">Notice</a></li>
-      <li><a href="studentnav5.php">Change Password</a></li>
-      <li><a href="server/logout.php">Logout</a></li>
-
+     <li><a  href="adminnav1.php">View Application</a></li>
+  <li><a  href="adminnav2.php">Change Password</a></li>
+  <li><a  class="active" href="adminnav3.php">History</a></li>
+  <li><a href="server/logout.php">Logout</a></li>
     </ul>
   </div>
 </nav>
 <br>
 <br>
 <br>
-<div class="a">
-<div style="overflow-x:auto;">
+<div style="overflow-x:auto;"><center>
    <?php 
-include("server/db.php");
-
-$sql = "SELECT App_id,date_of_app,unique_no,approved FROM student_details inner join ticket_details on student_details.rollno=ticket_details.Roll_no where student_details.rollno=$roll_nos";
+include ("server/db.php");
+$no = $_GET['his'];
+$sql = "SELECT App_id,Roll_no,gender,DOB,course,source,date_of_app,line,class,pre_certi_no,issued_on,unique_no,expire_date_previous FROM student_details inner join ticket_details on student_details.rollno=ticket_details.Roll_no where student_details.rollno=$no";
 $result = $con->query($sql);
 
 if ($result->num_rows > 0) 
 {
-
     echo "<table>
     <tr>
     <th>APPLICATION ID</th>
+    <th>ROLL NO</th>
+    <th>GENDER</th>
+    <th>D.O.B</th>
+    <th>COURSE</th>
+    <th>SOURCE</th>
+    <th>D.O.APP</th>
+    <th>ROUTE</th>
+    <th>CLASS</th>
+    <th>P.CERTI.NO</th>
+    <th>ISSUED ON</th>
     <th>UNIQUE NO</th>
-    <th>APPLICATION DATE</th>
-    <th>APPROVED</th>
-    
+    <th>EXPIRY DATE</th>
         </tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<tr><td>".$row["App_id"]."</td>";
-        echo "<td>".$row["unique_no"]."</td>";
+       echo "<td>".$row["Roll_no"]."</td>";
+         echo"<td> ".$row["gender"]."</td>";
+         echo"<td> ".$row["DOB"]."</td>";
+         echo "<td>".$row["course"]."</td>";
+        echo "<td>".$row["source"]."</td>";
         echo "<td>".$row["date_of_app"]."</td>";
-        echo "<td>".$row["approved"]."</td>";
-        
+        echo "<td>".$row["line"]."</td>";
+        echo "<td>".$row["class"]."</td>";
+        echo "<td>".$row["pre_certi_no"]."</td>";
+        echo "<td>".$row["issued_on"]."</td>";
+        echo "<td>".$row["unique_no"]."</td>";
+        echo "<td>".$row["expire_date_previous"]."</td></tr>";
+
    
-    }    echo "</table>";
+    }
+    echo "</table>";
 }
  else {
-    echo "0 results";
+	echo"<script> alert('History for entered roll no. does not exist');";
+	echo "window.location.href = 'adminnav1.php' </script>";
 }
 
-?>
-</div>
-
+?></center>
 </div>
 <footer class="footer-distributed">
 
@@ -248,12 +250,18 @@ PIN - 400703<br></p>
           Father Conceicao Rodrigues Institute of Technology' is a private engineering college affiliated to the University of Mumbai located in vashi, Navi Mumbai.
         </p>
 
-        
+        <div class="footer-icons">
+
+          <a href="https://www.facebook.com/pages/Fr-Conceicao-Rodrigues-Institute-of-Technology/109529155739829"><i class="fa fa-facebook"></i></a>
+          
+          <a href="https://in.linkedin.com/in/fyp-fcrit-87bb6016a"><i class="fa fa-linkedin"></i></a>
+          <a href="https://github.com/FCRIT"><i class="fa fa-github"></i></a>
+
+        </div>
 
       </div>
 
     </footer>
-
 
 </body>
 </html>
