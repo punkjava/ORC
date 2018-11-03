@@ -55,8 +55,8 @@ if (isset($_POST['submit'])) {
 )
 );
 		 		
-         $mail->Username='ip.proj.orc@gmail.com'; //emailid
-	    $mail->Password='project_Orc'; //password
+         $mail->Username=''; //emailid
+	    $mail->Password=''; //password
 	
 	    $mail->setfrom("ip.proj.orc@gmail.com");
 	     $mail->addAddress($mail_id);
